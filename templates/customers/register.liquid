@@ -1,36 +1,84 @@
-<div class="page-width">
-  <div class="grid">
-    <div class="grid__item medium-up--one-half medium-up--push-one-quarter">
+<article class="site-page background-alternate">
+  <header class="page-masthead">
+    <h1 class="page-title">
+      {{ 'account.register.title' | t }}
+    </h1>
+  </header>
 
-      <div class="form-vertical">
+  <div class="page-container">
+    <div class="page-content rte">
+      <div class="account-register">
         {% form 'create_customer' %}
+          {% if form.errors %}
+            {{ form.errors | default_errors }}
+          {% endif %}
 
-          <h1 class="text-center">{{ 'customer.register.title' | t }}</h1>
+          {% assign account_register_first_name_label = 'account.register.first_name' | t %}
+          {%
+            include 'form-elements',
+            id: 'customer_first_name',
+            name: 'customer[first_name]',
+            type: 'text'
+            value: form.first_name,
+            label: account_register_first_name_label
+          %}
 
-          {%- if form.errors -%}
-            <div class="form-message form-message--error">
-              {{ form.errors | default_errors }}
-            </div>
-          {%- endif -%}
+          {% assign account_register_last_name_label = 'account.register.last_name' | t %}
+          {%
+            include 'form-elements',
+            id: 'customer_last_name',
+            name: 'customer[last_name]',
+            type: 'text'
+            value: form.last_name,
+            label: account_register_last_name_label
+          %}
 
-          <label for="FirstName">{{ 'customer.register.first_name' | t }}</label>
-          <input type="text" name="customer[first_name]" id="FirstName" {% if form.first_name %}value="{{ form.first_name }}"{% endif %} autofocus>
+          {% assign account_register_email_label = 'account.register.email' | t %}
+          {%
+            include 'form-elements',
+            id: 'customer_email',
+            name: 'customer[email]',
+            type: 'text'
+            value: form.email,
+            label: account_register_email_label
+          %}
 
-          <label for="LastName">{{ 'customer.register.last_name' | t }}</label>
-          <input type="text" name="customer[last_name]" id="LastName" {% if form.last_name %}value="{{ form.last_name }}"{% endif %}>
+          {% assign account_register_password_label = 'account.register.password' | t %}
+          {%
+            include 'form-elements',
+            id: 'customer_password',
+            name: 'customer[password]',
+            type: 'password'
+            label: account_register_password_label
+          %}
 
-          <label for="Email">{{ 'customer.register.email' | t }}</label>
-          <input type="email" name="customer[email]" id="Email" class="{% if form.errors contains 'email' %} input--error{% endif %}" {% if form.email %} value="{{ form.email }}"{% endif %} autocorrect="off" autocapitalize="off">
-
-          <label for="CreatePassword">{{ 'customer.register.password' | t }}</label>
-          <input type="password" name="customer[password]" id="CreatePassword" class="{% if form.errors contains 'password' %} input--error{% endif %}">
-
-          <p class="text-center">
-            <input type="submit" value="{{ 'customer.register.submit' | t }}" class="btn">
-          </p>
-
+          {% assign account_register_submit_value = 'account.register.submit' | t %}
+          {%
+            include 'form-elements',
+            secondary: true,
+            type: 'submit'
+            value: account_register_submit_value
+          %}
         {% endform %}
+
+        <div class="account-register-signin">
+          <span class="account-register-signin-cta">
+            {{ 'account.register.signin' | t }}
+          </span>
+          <a
+            class="account-register-signin-link"
+            href="/account/login"
+          >
+            {{ 'account.register.signin_now' | t }}
+          </a>
+        </div>
       </div>
     </div>
   </div>
-</div>
+
+  {%
+    include 'patterns',
+    size: 'large',
+    class: 'page-content-pattern'
+  %}
+</article>

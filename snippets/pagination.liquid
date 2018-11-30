@@ -1,35 +1,64 @@
-<ul class="list--inline pagination">
-  {% unless paginate.previous.is_link %}
-    <li aria-hidden="true">
-      <button class="btn btn--tertiary btn--narrow" disabled>
-        {% include 'icon-arrow-left' %}
-        <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
-      </button>
-    </li>
-    {% else %}
-    <li>
-      <a href="{{ paginate.previous.url }}" class="btn btn--tertiary btn--narrow">
-        {% include 'icon-arrow-left' %}
-        <span class="icon__fallback-text">{{ 'general.pagination.previous' | t }}</span>
-      </a>
-    </li>
-  {% endunless %}
-  <li class="pagination__text">
-    {{ 'general.pagination.current_page' | t: current: paginate.current_page, total: paginate.pages }}
-  </li>
-  {% unless paginate.next.is_link %}
-    <li aria-hidden="true">
-      <button class="btn btn--tertiary btn--narrow" disabled>
-        {% include 'icon-arrow-right' %}
-        <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
-      </button>
-    </li>
-  {% else %}
-    <li>
-      <a href="{{ paginate.next.url }}" class="btn btn--tertiary btn--narrow">
-        {% include 'icon-arrow-right' %}
-        <span class="icon__fallback-text">{{ 'general.pagination.next' | t }}</span>
-      </a>
-    </li>
-  {% endunless %}
-</ul>
+{% if paginate.previous or paginate.next %}
+  <ul class="pagination">
+
+    {% if paginate.previous %}
+      <li class="pagination-previous">
+        <a
+          class="pagination-item"
+          href="{{ paginate.previous.url }}"
+          title="{{ 'general.pagination.prev' | t }}"
+          aria-label="{{ 'general.pagination.prev' | t }}"
+        >
+          <span
+            class="pagination-chevron"
+            aria-hidden="true"
+          >
+            {% include 'icons', id: 'chevron' %}
+          </span>
+        </a>
+      </li>
+    {% endif %}
+
+    {% for part in paginate.parts %}
+      {% if part.is_link %}
+        <li>
+          <a class="pagination-item" href="{{ part.url }}">
+            {{ part.title }}
+          </a>
+        </li>
+      {% else %}
+        {% if part.title == '&hellip;' %}
+          <li>
+            <span class="pagination-item pagination-ellipsis">
+              {{ part.title }}
+            </span>
+          </li>
+        {% else %}
+          <li>
+            <span class="pagination-item pagination-active">
+              {{ part.title }}
+            </span>
+          </li>
+        {% endif %}
+      {% endif %}
+    {% endfor %}
+
+    {% if paginate.next %}
+      <li class="pagination-next">
+        <a
+          class="pagination-item"
+          href="{{ paginate.next.url }}"
+          title="{{ 'general.pagination.next' | t }}"
+          aria-label="{{ 'general.pagination.next' | t }}"
+        >
+          <span
+            class="pagination-chevron"
+            aria-hidden="true"
+          >
+            {% include 'icons', id: 'chevron' %}
+          </span>
+        </a>
+      </li>
+    {% endif %}
+  </ul>
+{% endif %}

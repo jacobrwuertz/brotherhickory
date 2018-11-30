@@ -1,56 +1,33 @@
-<!-- snippet/product-price.liquid -->
-{% if variant.title %}
-  {%- assign compare_at_price = variant.compare_at_price -%}
-  {%- assign price = variant.price -%}
-  {%- assign available = variant.available -%}
-{% else %}
-  {%- assign compare_at_price = 1999 -%}
-  {%- assign price = 1999 -%}
-  {%- assign available = true -%}
-{% endif %}
+{% comment %}
+  @param component_scope {String}
+    Additional class to add to snippet depending on parent component
 
-{%- assign money_price = price | money -%}
+  @param price {Number}
+    product.price
 
-<dl class="price{% if compare_at_price > price %} price--on-sale{% endif %}" data-price>
+  @param compare_at_price {Number}
+    product.compare_at_price
 
-  {% if section.settings.show_vendor %}
-    <div class="price__vendor">
-      <dt>
-        <span class="visually-hidden">{{ 'products.product.vendor' | t }}</span>
-      </dt>
-      <dd>
-        {{ product.vendor }}
-      </dd>
+  @param on_sale {Bool}
+    If a product, or one of it's variants is on sale
+{% endcomment %}
+
+<div class="product-price {% if component_scope %}{{ component_scope }}{% endif %}">
+  {% unless price_varies %}
+    <div class="price-compare-at {% if on_sale %}visible{% endif %}" data-price-compare-at>
+      <span class="money">
+        {{ compare_at_price | money }}
+      </span>
     </div>
-  {% endif %}
+  {% endunless %}
 
-  <div class="price__regular">
-    <dt>
-      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.regular_price' | t }}</span>
-    </dt>
-    <dd>
-      <span class="price-item price-item--regular" data-regular-price>
-        {% if available %}
-          {% if compare_at_price > price %}
-            {{ compare_at_price | money }}
-          {% else %}
-            {{ money_price }}
-          {% endif %}
-        {% else %}
-          {{ 'products.product.sold_out' | t }}
-        {% endif %}
-      </span>
-    </dd>
+  <div class="price-main" data-price>
+    {% if price_varies %}
+      {{ 'product.item.price_varies' | t }}
+    {% endif %}
+
+    <span class="money">
+      {{ price | money }}
+    </span>
   </div>
-  <div class="price__sale">
-    <dt>
-      <span class="visually-hidden visually-hidden--inline">{{ 'products.product.sale_price' | t }}</span>
-    </dt>
-    <dd>
-      <span class="price-item price-item--sale" data-sale-price>
-        {{ money_price }}
-      </span>
-      <span class="price-item__label" aria-hidden="true">{{ 'products.product.on_sale' | t }}</span>
-    </dd>
-  </div>
-</dl>
+</div>
