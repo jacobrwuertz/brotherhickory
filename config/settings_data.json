@@ -1,33 +1,77 @@
 {
   "current": {
-    "color_background": "#fff",
-    "color_headings": "#5319a7",
-    "color_text": "#7c708b",
-    "color_links": "#e1285a",
-    "color_accent_primary": "#5319a7",
-    "color_accent_secondary": "#e1285a",
-    "color_sales_background": "#e1285a",
+    "color_background": "#f6f6f6",
+    "color_headings": "#2b3e55",
+    "color_text": "#2b3e55",
+    "color_links": "#8c7345",
+    "color_accent_primary": "#2b3e55",
+    "color_accent_secondary": "#8c7345",
+    "color_sales_background": "#8c7345",
     "color_sales_text": "#fff",
     "color_button_primary": "#fff",
     "color_button_secondary": "#fff",
-    "type_primary": "ubuntu_n4",
-    "type_secondary": "ubuntu_n4",
+    "type_primary": "ibm_plex_sans_n3",
+    "type_secondary": "ibm_plex_sans_n3",
     "type_button": "primary",
-    "embellishment_edges": "soft_round",
-    "embellishment_animation_curve": "ease-out-back",
+    "embellishment_edges": "cornered",
+    "embellishment_animation_curve": "ease",
     "embellishment_icons": "thin",
-    "embellishment_pattern": "triangles",
+    "embellishment_pattern": "angled_squiggles",
     "embellishment_custom_pattern": "",
-    "enable_product_quickshop": false,
-    "qs_show_payment_button": false,
-    "product_image_ratio": "natural",
+    "enable_product_quickshop": true,
+    "qs_show_vendor": true,
+    "qs_show_social_sharing_buttons": true,
+    "qs_options_position": "below",
+    "qs_quantity_picker_style": "integrated-with-button",
+    "qs_show_payment_button": true,
+    "qs_enable_cart_redirect": false,
+    "product_image_ratio": "cropped-square",
     "enable_search_articles_pages": true,
+    "s_products_enable_standard_product_grid": true,
+    "s_products_products_per_row": 3,
+    "s_products_products_per_page": 12,
+    "social_default_image": "",
+    "social_facebook": "",
+    "social_twitter": "",
+    "social_google": "",
+    "social_pinterest": "",
+    "social_instagram": "",
+    "social_tumblr": "",
+    "social_vimeo": "",
+    "social_youtube": "",
+    "social_rss": "",
+    "social_email": "",
+    "favicon": "",
+    "enable_currency_converter": true,
+    "currency_display_format": "money_with_currency_format",
+    "currency_converter_currencies": "INR GBP CAD USD AUD EUR JPY",
+    "currency_converter_default": "USD",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
     "product_gallery_placement": "left",
     "product_show_share_buttons": true,
+    "product_gallery_position_desktop": "right",
     "sections": {
       "pxs-announcement-bar": {
         "type": "pxs-announcement-bar",
         "settings": {
+          "show_announcement": false,
+          "announcement_home_only": false,
+          "announcement_text": "Call attention to a special discount, feature, or promotion here.",
+          "announcement_text_mobile": "Use less text on mobile!",
+          "announcement_link": "",
           "announcement_color": "#ffffff",
           "announcement_background": "#e1285a"
         }
@@ -36,8 +80,12 @@
         "type": "static-header",
         "settings": {
           "sticky_header": true,
+          "logo": "",
+          "logo_height": 50,
+          "logo_width": 125,
           "main_menu": "main-menu",
-          "navigation_layout": "drawer"
+          "navigation_layout": "drawer",
+          "story_handle": ""
         }
       },
       "static-list-collections": {
@@ -60,6 +108,8 @@
         "type": "static-related-products",
         "settings": {
           "enable": true,
+          "title": "Related products",
+          "subheading": "",
           "product_count": 3,
           "background": "background-alternate"
         }
@@ -69,7 +119,10 @@
         "blocks": {
           "static-footer-1": {
             "type": "rich_text",
-            "settings": {}
+            "settings": {
+              "title": "Rich text",
+              "text": "<p>Use this section to welcome customers to your store, say a bit about your brand, or share news and seasonal promotions.<\/p>"
+            }
           },
           "static-footer-2": {
             "type": "menu",
@@ -99,24 +152,70 @@
           "static-story-1": {
             "type": "rich-text",
             "settings": {
+              "title": "Rich text",
+              "subheading": "",
+              "text": "<p>Use this section to welcome customers to your store, say a bit about your brand, or share news and seasonal promotions.<\/p>",
               "text_layout": "center",
               "background": "background-alternate"
             }
           },
           "static-story-2": {
             "type": "images-with-text",
-            "settings": {}
+            "settings": {
+              "image_1": "",
+              "heading_1": "Add a title or tagline",
+              "caption_1": "<p>Use an image and a short piece of text to illustrate your story.<\/p>",
+              "image_2": "",
+              "heading_2": "Add a title or tagline",
+              "caption_2": "<p>Use an image and a short piece of text to illustrate your story.<\/p>",
+              "image_3": "",
+              "heading_3": "Add a title or tagline",
+              "caption_3": "<p>Use an image and a short piece of text to illustrate your story.<\/p>",
+              "image_4": "",
+              "heading_4": "Add a title or tagline",
+              "caption_4": "<p>Use an image and a short piece of text to illustrate your story.<\/p>"
+            }
           },
           "static-story-3": {
             "type": "features-list",
-            "settings": {}
+            "settings": {
+              "title": "Features list",
+              "subheading": "",
+              "background": "background-default",
+              "icon_1": "",
+              "heading_1": "Add a title or tagline",
+              "caption_1": "<p>Display up to six features with an option to toggle icons on or off, and add unique calls to action.<\/p>",
+              "icon_2": "",
+              "heading_2": "Add a title or tagline",
+              "caption_2": "<p>Display up to six features with an option to toggle icons on or off, and add unique calls to action.<\/p>",
+              "icon_3": "",
+              "heading_3": "Add a title or tagline",
+              "caption_3": "<p>Display up to six features with an option to toggle icons on or off, and add unique calls to action.<\/p>",
+              "icon_4": "",
+              "heading_4": "Add a title or tagline",
+              "caption_4": "<p>Display up to six features with an option to toggle icons on or off, and add unique calls to action.<\/p>",
+              "icon_5": "",
+              "heading_5": "Add a title or tagline",
+              "caption_5": "<p>Display up to six features with an option to toggle icons on or off, and add unique calls to action.<\/p>",
+              "icon_6": "",
+              "heading_6": "Add a title or tagline",
+              "caption_6": "<p>Display up to six features with an option to toggle icons on or off, and add unique calls to action.<\/p>"
+            }
           },
           "static-story-4": {
             "type": "image-with-text-overlay",
             "settings": {
+              "image": "",
               "text_layout": "left",
+              "title": "Image with text overlay",
+              "subheading": "",
+              "text": "<p>Say a bit about your brand, a specific product, or promotion.<\/p>",
               "custom_color": true,
-              "text_color": "#ffffff"
+              "text_color": "#ffffff",
+              "link": "",
+              "link_text": "",
+              "overlay_color": "#ffffff",
+              "overlay_opacity": 50
             }
           }
         },
@@ -133,7 +232,10 @@
         "settings": {
           "show_collection_image": false,
           "sort_by": true,
-          "filter_style": "none"
+          "filter_style": "none",
+          "products_enable_standard_product_grid": false,
+          "products_products_per_row": 4,
+          "products_products_per_page": 12
         }
       },
       "static-blog": {
@@ -151,6 +253,9 @@
       "dynamic-rich-text": {
         "type": "dynamic-rich-text",
         "settings": {
+          "title": "Rich text",
+          "subheading": "",
+          "text": "<p>Use this section to welcome customers to your store, say a bit about your brand, or share news and seasonal promotions.<\/p>",
           "text_layout": "center",
           "background": "background-alternate"
         }
@@ -158,6 +263,8 @@
       "dynamic-twitter-feed": {
         "type": "dynamic-twitter-feed",
         "settings": {
+          "title": "Twitter feed",
+          "username": "",
           "retweets": false,
           "images": false,
           "background": "background-alternate"
@@ -166,14 +273,24 @@
       "dynamic-video-with-text": {
         "type": "dynamic-video-with-text",
         "settings": {
+          "title": "Video with text",
+          "subheading": "",
+          "text": "<p>Enhance your homepage with a video that relates to your process, products, or story.<\/p>",
           "text_layout": "top",
+          "video_url": "https:\/\/www.youtube.com\/watch?v=_9VUPq3SxOc",
           "aspect_ratio": "aspect-ratio-16-by-9",
-          "button_style": "secondary"
+          "image": "",
+          "button_style": "secondary",
+          "overlay_color": "#ffffff",
+          "overlay_opacity": 50
         }
       },
       "dynamic-blog-posts": {
         "type": "dynamic-blog-posts",
         "settings": {
+          "title": "Blog posts",
+          "subheading": "",
+          "blog": "",
           "post_limit": 3,
           "show_date": true,
           "show_author": true,
@@ -186,29 +303,35 @@
       },
       "dynamic-testimonials": {
         "type": "dynamic-testimonials",
-        "settings": {},
         "blocks": {
           "dynamic-testimonial-1": {
             "type": "testimonial",
             "settings": {
               "title": "@username",
+              "link": "",
+              "caption": "Showcase up to three testimonials to build trust with potential customers.",
               "style": "twitter",
-              "caption": "Showcase up to three testimonials to build trust with potential customers."
+              "product_handle": ""
             }
           },
           "dynamic-testimonial-2": {
             "type": "testimonial",
             "settings": {
               "title": "Name",
+              "link": "",
+              "caption": "Showcase up to three testimonials to build trust with potential customers.",
               "style": "facebook",
-              "caption": "Showcase up to three testimonials to build trust with potential customers."
+              "product_handle": ""
             }
           },
           "dynamic-testimonial-3": {
             "type": "testimonial",
             "settings": {
               "title": "Name",
-              "caption": "Showcase up to three testimonials to build trust with potential customers."
+              "link": "",
+              "caption": "Showcase up to three testimonials to build trust with potential customers.",
+              "style": "standard",
+              "product_handle": ""
             }
           }
         },
@@ -216,11 +339,31 @@
           "dynamic-testimonial-1",
           "dynamic-testimonial-2",
           "dynamic-testimonial-3"
-        ]
+        ],
+        "settings": {
+          "title": "Testimonials",
+          "subheading": "",
+          "background": "background-default"
+        }
       },
       "dynamic-featured-product": {
         "type": "dynamic-featured-product",
-        "settings": {}
+        "settings": {
+          "product_handle": "",
+          "background": "background-default",
+          "description": "<p>Tell customers about the look, feel, and style of your product. Add details on color, materials, sizing, and where it was made.<\/p>",
+          "show_vendor": true,
+          "show_social_sharing_buttons": true,
+          "enable_sticky_details": false,
+          "product_gallery_layout_desktop": "slideshow",
+          "product_gallery_position_desktop": "left",
+          "product_gallery_position_mobile": "below",
+          "enable_image_zoom": true,
+          "options_position": "below",
+          "quantity_picker_style": "integrated-with-button",
+          "show_payment_button": false,
+          "enable_cart_redirect": false
+        }
       },
       "dynamic-slideshow": {
         "type": "dynamic-slideshow",
@@ -228,7 +371,14 @@
           "dynamic-slideshow-0": {
             "type": "slide",
             "settings": {
+              "image": "",
               "text_layout": "default-right",
+              "custom_color": false,
+              "text_color": "#2f5d62",
+              "title": "Slide",
+              "text": "Introduce customers to your shop with lifestyle imagery and product photography.",
+              "link": "",
+              "link_text": "",
               "button_style": "secondary"
             }
           }
@@ -244,6 +394,8 @@
       "dynamic-newsletter": {
         "type": "dynamic-newsletter",
         "settings": {
+          "title": "",
+          "text": "<p>Invite customers to join your mailing list.<\/p>",
           "background": "background-alternate",
           "enable_background": true
         }
@@ -251,12 +403,18 @@
       "dynamic-featured-collection": {
         "type": "dynamic-featured-collection",
         "settings": {
+          "title": "Featured collection",
+          "subheading": "",
+          "collection": "",
           "product_count": 6
         }
       },
       "dynamic-instagram-feed": {
         "type": "dynamic-instagram-feed",
         "settings": {
+          "title": "Instagram feed",
+          "subheading": "",
+          "access_token": "",
           "background": "background-default"
         }
       }
@@ -272,8 +430,7 @@
       "dynamic-twitter-feed",
       "dynamic-instagram-feed",
       "dynamic-newsletter"
-    ],
-    "product_gallery_position_desktop": "right"
+    ]
   },
   "presets": {
     "Natural": {
